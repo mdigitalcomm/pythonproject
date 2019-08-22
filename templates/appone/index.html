@@ -11,7 +11,23 @@
 
 <body>
     <h1>This is homepage from appone/index.html</h1>
-    <em>{{ first_tag }}</em>
+    {% if websites_list %}
+    <table>
+        <th>
+            Website
+        </th>
+        <th>
+            Topic
+        </th>
+        {% for web in websites_list %}
+        <tr>
+            <td>{{ web.web_name }}</td>
+            <td>{{ web.topic }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
 </body>
 
 </html>
